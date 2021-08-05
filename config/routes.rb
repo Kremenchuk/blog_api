@@ -5,17 +5,20 @@ Rails.application.routes.draw do
   post 'login', to: 'authentication#authenticate'
   post 'signup', to: 'authentication#signup'
 
+  namespace :api do
   #articles
-  post 'new_article', to: 'articles#new_article'
-  get 'get_articles', to: 'articles#get_articles'
-  get 'get_article', to: 'articles#get_article'
-  get 'get_articles_author', to: 'articles#get_articles_author'
-  get 'get_articles_category', to: 'articles#get_articles_category'
-  delete 'delete_article', to: 'articles#delete_article'
+    post 'new_article', to: 'articles#create'
+    get 'get_articles', to: 'articles#index'
+    get 'get_article', to: 'articles#show'
+    get 'get_articles_author', to: 'articles#get_articles_author'
+    get 'get_articles_category', to: 'articles#get_articles_category'
+    delete 'delete_article', to: 'articles#destroy'
 
 
-  #comments
-  post 'new_comment', to: 'comments#new_comment'
-  get 'get_comments', to: 'comments#get_comments'
-  delete 'delete_comment', to: 'comments#delete_comment'
+    #comments
+    post 'new_comment', to: 'comments#create'
+    get 'get_comments', to: 'comments#index'
+    delete 'delete_comment', to: 'comments#destroy'
+
+  end
 end

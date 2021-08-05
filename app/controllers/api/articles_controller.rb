@@ -1,9 +1,9 @@
-class ArticlesController < ApplicationController
+class Api::ArticlesController < ApplicationController
 
-  before_action :find_article, only: [:get_article, :delete_article]
+  before_action :find_article, only: [:show, :destroy]
 
 
-  def new_article
+  def create
     begin
 
       article = Article.new
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   end
 
 
-  def get_articles
+  def index
     begin
       articles = Article.all
       render json: {articles: add_comments_count_to_response(articles)}
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
 
 
-  def get_article
+  def show
     begin
       render json: {article: add_comments_count_to_response(@article)}
     rescue => e
@@ -60,7 +60,7 @@ class ArticlesController < ApplicationController
 
 
 
-  def delete_article
+  def destroy
     begin
       if @article.user == @current_user
         if @article.destroy!
