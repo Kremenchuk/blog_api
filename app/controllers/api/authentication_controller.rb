@@ -5,7 +5,9 @@ class Api::AuthenticationController < ApplicationController
 
   def signup
     begin
-      User.new(permit_user_data).save!
+      if User.new(permit_user_data).save!
+        render json: { succes: 'User is created' }, status: 201
+      end
     rescue => e
       render json: { error: e }
     end
@@ -15,7 +17,8 @@ class Api::AuthenticationController < ApplicationController
     command = AuthenticateUser.call(permit_user_data[:email], permit_user_data[:password])
 
     if command.success?
-      render json: { auth_token: command.result }
+      response.set_header('Authorization', command.result)
+      render json: { succes: 'Login successful' }, status: 200
     else
       render json: { error: command.errors }, status: :unauthorized
     end

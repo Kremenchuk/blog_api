@@ -5,7 +5,6 @@ class Api::ArticlesController < ApplicationController
 
   def create
     begin
-
       article = Article.new
       article.user = @current_user
       article.attributes = new_article_permit_params.as_json
