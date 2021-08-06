@@ -32,7 +32,11 @@ class Api::ArticlesController < ApplicationController
 
   def show
     begin
-      render json: {article: add_comments_count_to_response(@article)}
+      if @article.present?
+        render json: {article: add_comments_count_to_response(@article)}
+      else
+        render json: { error: 'Article not found!' }, status: 400
+      end
     rescue => e
       render json: { error: e }, status: 400
     end
@@ -97,7 +101,10 @@ class Api::ArticlesController < ApplicationController
   end
 
   def find_article
-    @article = Article.find(permit_params_id[:id])
+    begin
+      @article = Article.find(permit_params_id[:id])
+    rescue
+    end
   end
 
   def permit_params_id

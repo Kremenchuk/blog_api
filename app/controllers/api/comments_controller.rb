@@ -21,7 +21,11 @@ class Api::CommentsController < ApplicationController
 
   def index
     begin
-      render json: {comments: Comment.where(article: @article)}
+      if @article.present?
+        render json: {comments: Comment.where(article: @article)}
+      else
+        render json: { error: 'Article not found!' }, status: 400
+      end
     rescue => e
       render json: { error: e }, status: 400
     end
@@ -61,7 +65,10 @@ class Api::CommentsController < ApplicationController
   end
 
   def find_article
-    @article = Article.find(permit_article_id[:article_id])
+    begin
+      @article = Article.find(permit_article_id[:article_id])
+    rescue
+    end
   end
 
 

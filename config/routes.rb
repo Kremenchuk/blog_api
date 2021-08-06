@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
 
-  # users
-  post 'login', to: 'authentication#authenticate'
-  post 'signup', to: 'authentication#signup'
+
 
   namespace :api do
+    # users
+    post 'login', to: 'authentication#authenticate'
+    post 'signup', to: 'authentication#signup'
+
   #articles
     post 'new_article', to: 'articles#create'
     get 'get_articles', to: 'articles#index'
