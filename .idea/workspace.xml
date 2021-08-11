@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b524805e-a112-4d76-91b0-d3819170a456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spec/controllers/api/articles_controller_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api/articles_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/articles_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api/comments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/comments_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/factories/articles.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/factories/articles.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/support/api_helpers.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/support/user_helpers.rb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,15 +60,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/controllers/api/authentication_controller_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/authentication_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -82,46 +69,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/commands/authenticate_user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/articles_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-718">
-              <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/comments_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="840">
+              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spec/controllers/api/articles_controller_spec.rb">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/comments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://02c43ac7-bad9-44e3-bf2a-39bc4dae8500/schema/main/table/articles">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+            <state relative-caret-position="840">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -196,9 +156,9 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/spec/factories/users.rb" />
         <option value="$PROJECT_DIR$/spec/factories/articles.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/comments_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/articles_controller.rb" />
         <option value="$PROJECT_DIR$/spec/controllers/api/articles_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/articles_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/comments_controller.rb" />
       </list>
     </option>
   </component>
@@ -220,7 +180,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,6 +260,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,7 +297,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.Api::ArticlesController: blog_api">
+  <component name="RunManager" selected="Rails.Development: blog_api">
     <configuration name="Api::ArticlesController: blog_api" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="blog_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -630,7 +590,8 @@
       <workItem from="1628098528175" duration="13048000" />
       <workItem from="1628166882154" duration="15691000" />
       <workItem from="1628227377047" duration="8923000" />
-      <workItem from="1628268642670" duration="7174000" />
+      <workItem from="1628268642670" duration="7650000" />
+      <workItem from="1628698440358" duration="3026000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1628012815627</created>
@@ -674,13 +635,17 @@
       <option name="project" value="LOCAL" />
       <updated>1628237542464</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tests">
+      <created>1628276018017</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1628276018017</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Api__ArticlesController__blog_api - 2021.08.06 at 21h 28m 57s.xml">
-      <configuration name="Api::ArticlesController: blog_api" configurationId="RSpecRunConfigurationType" />
-    </history-entry>
     <history-entry file="Api__ArticlesController__blog_api - 2021.08.06 at 21h 29m 29s.xml">
       <configuration name="Api::ArticlesController: blog_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
@@ -708,9 +673,12 @@
     <history-entry file="Api__ArticlesController__blog_api - 2021.08.06 at 21h 49m 40s.xml">
       <configuration name="Api::ArticlesController: blog_api" configurationId="RSpecRunConfigurationType" />
     </history-entry>
+    <history-entry file="Api__ArticlesController__blog_api - 2021.08.06 at 21h 50m 24s.xml">
+      <configuration name="Api::ArticlesController: blog_api" configurationId="RSpecRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55437000" />
+    <option name="totallyTimeSpent" value="58939000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -725,13 +693,13 @@
     <frame x="-5" y="-5" width="1930" height="1063" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18423855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39759037" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46330777" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.29901424" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32968238" />
@@ -796,8 +764,8 @@
         <watch expression="response.body" language="ruby" />
       </configuration>
       <configuration name="RailsRunConfigurationType">
-        <watch expression="Article.find(permit_article_id[:article_id]).errors.present?" language="ruby" />
-        <watch expression="articles.is_a? Article" language="ruby" />
+        <watch expression="error" language="ruby" />
+        <watch expression="permit_params_id[:id]" language="ruby" />
       </configuration>
     </watches-manager>
   </component>
@@ -810,57 +778,57 @@
     <SUITE FILE_PATH="coverage/blog_api@spec__blog_api.rcov" NAME="spec: blog_api Coverage Results" MODIFIED="1628233715034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blog_api" />
     <SUITE FILE_PATH="coverage/blog_api@Api__AuthenticationController__blog_api.rcov" NAME="Api::AuthenticationController: blog_api Coverage Results" MODIFIED="1628233505555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blog_api" />
     <SUITE FILE_PATH="coverage/blog_api@Api__ArticlesController__blog_api.rcov" NAME="Api::ArticlesController: blog_api Coverage Results" MODIFIED="1628275820967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blog_api" />
-    <SUITE FILE_PATH="coverage/blog_api@Development__blog_api.rcov" NAME="Development: blog_api Coverage Results" MODIFIED="1628274834869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blog_api" />
+    <SUITE FILE_PATH="coverage/blog_api@Development__blog_api.rcov" NAME="Development: blog_api Coverage Results" MODIFIED="1628698603755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blog_api" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>articles.is_a? Article</expression-string>
+        <expression-string>permit_params_id[:id]</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>response.body</expression-string>
+        <expression-string>error</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>response.status</expression-string>
+        <expression-string>errors.details</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Article.first.id</expression-string>
+        <expression-string>article.errors.details</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>response.headers['Authorization']</expression-string>
+        <expression-string>article.valid?</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Authorization: response.headers['Authorization']</expression-string>
+        <expression-string>params</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>headers:{Authorization: response.headers['Authorization']</expression-string>
+        <expression-string>Article.valid?</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>article.save!</expression-string>
+        <expression-string>Article.error</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>article.user.email</expression-string>
+        <expression-string>Article.errors</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>article.user</expression-string>
+        <expression-string>errors</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1026,13 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20210803181500_create_articles.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/share/rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/faker-2.18.0/lib/faker/default/lorem.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1082,24 +1043,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/authentication_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="41" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/article.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/api/authentication_controller_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1124,17 +1071,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/comments_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/commands/authenticate_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/api/articles_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/api/authentication_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="46" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/authentication_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1145,17 +1106,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/articles_controller.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210803181500_create_articles.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-718">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/api/articles_controller_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/articles_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="840">
+          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/comments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>

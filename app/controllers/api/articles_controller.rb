@@ -2,79 +2,63 @@ class Api::ArticlesController < ApplicationController
 
   before_action :find_article, only: [:show, :destroy]
 
+  rescue_from ActiveRecord::RecordInvalid, with: ->(error) do
+    render json: { error: error }, status: 400
+  end
 
   def create
-    begin
       article = Article.new
       article.user = @current_user
-      article.attributes = new_article_permit_params.as_json
-      if article.save!
-        render json: { succes: 'Article is created' }, status: 200
-      end
-
-    rescue => e
-      render json: { error: e }, status: 400
-    end
+      article.attributes = new_article_permit_params
+      article.save!
+      render json: { succes: 'Article is created' }, status: 200
   end
 
 
   def index
-    begin
       articles = Article.all
       render json: {articles: add_comments_count_to_response(articles)}, status: 200
-    rescue => e
-      render json: { error: e }, status: 400
-    end
   end
 
 
 
   def show
-    begin
       if @article.present?
         render json: {article: add_comments_count_to_response(@article)}, status: 200
       else
         render json: { error: 'Article not found!' }, status: 400
       end
-    rescue => e
-      render json: { error: e }, status: 400
-    end
   end
 
 
   def get_articles_author
-    begin
-      articles = Article.where(user_id: permit_params_id[:id])
+    articles = Article.where(user_id: permit_params_id[:id])
+    if articles.present?
       render json: {articles: add_comments_count_to_response(articles)}, status: 200
-    rescue => e
-      render json: { error: e }, status: 400
+    else
+      render json: { error: "Articles by author id:#{permit_params_id[:id]} not found!" }, status: 400
     end
   end
 
 
   def get_articles_category
-    begin
       articles = Article.where(category: params.permit(:category)['category'])
-      render json: {articles: add_comments_count_to_response(articles)}
-    rescue => e
-      render json: { error: e }, status: 400
-    end
+      if articles.present?
+        render json: {articles: add_comments_count_to_response(articles)}, status: 200
+      else
+        render json: { error: "Articles by category:#{params.permit(:category)['category']} not found!" }, status: 400
+      end
   end
 
 
 
   def destroy
-    begin
-      if @article.user == @current_user
-        if @article.destroy!
-          render json: { succes: 'Article is deleted' }, status: 200
-        end
-      else
-        render json: { error: 'Access denied. Removal is available only to the author' }, status: 403
+    if @article.user == @current_user
+      if @article.destroy!
+        render json: { succes: 'Article is deleted' }, status: 200
       end
-
-    rescue => e
-      render json: { error: e }, status: 400
+    else
+      render json: { error: 'Access denied. Removal is available only to the author' }, status: 403
     end
   end
 
@@ -109,10 +93,7 @@ class Api::ArticlesController < ApplicationController
   end
 
   def find_article
-    begin
-      @article = Article.find(permit_params_id[:id])
-    rescue
-    end
+      @article = Article.where(id: permit_params_id[:id])
   end
 
   def permit_params_id
