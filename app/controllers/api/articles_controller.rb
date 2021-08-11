@@ -26,7 +26,7 @@ class Api::ArticlesController < ApplicationController
       if @article.present?
         render json: {article: add_comments_count_to_response(@article)}, status: 200
       else
-        render json: { error: 'Article not found!' }, status: 400
+        render json: { error: 'Article not found!' }, status: 404
       end
   end
 
@@ -36,7 +36,7 @@ class Api::ArticlesController < ApplicationController
     if articles.present?
       render json: {articles: add_comments_count_to_response(articles)}, status: 200
     else
-      render json: { error: "Articles by author id:#{permit_params_id[:id]} not found!" }, status: 400
+      render json: { error: "Articles by author id:#{permit_params_id[:id]} not found!" }, status: 404
     end
   end
 
@@ -46,7 +46,7 @@ class Api::ArticlesController < ApplicationController
       if articles.present?
         render json: {articles: add_comments_count_to_response(articles)}, status: 200
       else
-        render json: { error: "Articles by category:#{params.permit(:category)['category']} not found!" }, status: 400
+        render json: { error: "Articles by category:#{params.permit(:category)['category']} not found!" }, status: 404
       end
   end
 

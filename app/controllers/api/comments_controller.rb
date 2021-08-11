@@ -12,7 +12,7 @@ class Api::CommentsController < ApplicationController
     comment.article = @article
     comment.attributes = new_comment_permit_params
     if comment.save!
-      render json: { succes: 'Comment is created' }, status: 200
+      render json: { succes: 'Comment is created' }, status: 201
     end
   end
 
@@ -21,7 +21,7 @@ class Api::CommentsController < ApplicationController
     if @article.present?
       render json: {comments: Comment.where(article: @article)}, status: 200
     else
-      render json: { error: 'Article not found!' }, status: 400
+      render json: { error: 'Article not found!' }, status: 404
     end
   end
 
