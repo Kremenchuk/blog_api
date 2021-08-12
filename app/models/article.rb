@@ -8,6 +8,6 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many   :comments, dependent: :destroy
 
-
+  scope :old, -> { where('created_at < ?', 6.days.ago )}
 
 end
