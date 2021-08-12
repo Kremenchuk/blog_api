@@ -1,10 +1,8 @@
 class Api::ArticlesController < ApplicationController
 
+
   before_action :find_article, only: [:show, :destroy]
 
-  rescue_from ActiveRecord::RecordInvalid, with: ->(error) do
-    render json: { error: error }, status: 400
-  end
 
   def create
       article = Article.new
@@ -21,7 +19,6 @@ class Api::ArticlesController < ApplicationController
   end
 
 
-
   def show
       if @article.present?
         render json: {article: add_comments_count_to_response(@article)}, status: 200
@@ -32,7 +29,7 @@ class Api::ArticlesController < ApplicationController
 
 
   def get_articles_author
-    articles = Article.where(user_id: permit_params_id[:id])
+    articles = Article.find(permit_params_id[:id])
     if articles.present?
       render json: {articles: add_comments_count_to_response(articles)}, status: 200
     else
@@ -49,7 +46,6 @@ class Api::ArticlesController < ApplicationController
         render json: { error: "Articles by category:#{params.permit(:category)['category']} not found!" }, status: 404
       end
   end
-
 
 
   def destroy
@@ -88,13 +84,16 @@ class Api::ArticlesController < ApplicationController
     return article_array
   end
 
+
   def new_article_permit_params
     params.permit(:title, :body, :category, :publication_date)
   end
 
+
   def find_article
-      @article = Article.where(id: permit_params_id[:id])
+      @article = Article.find(permit_params_id[:id])
   end
+
 
   def permit_params_id
     params.permit(:id)

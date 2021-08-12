@@ -2,10 +2,6 @@ class Api::CommentsController < ApplicationController
 
   before_action :find_article, only: [:create, :index]
 
-  rescue_from ActiveRecord::RecordInvalid, with: ->(error) do
-    render json: { error: error }, status: 400
-  end
-
   def create
     comment = Comment.new
     comment.user = @current_user
@@ -27,7 +23,7 @@ class Api::CommentsController < ApplicationController
 
 
   def destroy
-    comment = Comment.where(id: permit_comment_id[:id])
+    comment = Comment.find(permit_comment_id[:id])
     if comment.user == @current_user
       if comment.destroy!
         render json: { succes: 'Comment is deleted' }, status: 200
@@ -45,16 +41,19 @@ class Api::CommentsController < ApplicationController
     params.permit(:body)
   end
 
+
   def permit_comment_id
     params.permit(:id)
   end
+
 
   def permit_article_id
     params.permit(:article_id)
   end
 
+
   def find_article
-    @article = Article.where(id: permit_article_id[:article_id])
+    @article = Article.find(permit_article_id[:article_id])
   end
 
 
