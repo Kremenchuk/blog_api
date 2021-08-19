@@ -6,12 +6,7 @@ class ApplicationController < ActionController::API
   private
 
 
-  rescue_from ActiveRecord::RecordInvalid, with: ->(error) do
-    render json: { error: error }, status: 400
-  end
-
-
-  rescue_from ActiveRecord::RecordNotFound, with: ->(error) do
+  rescue_from ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound, with: ->(error) do
     render json: { error: error }, status: 400
   end
 

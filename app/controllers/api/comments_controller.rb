@@ -14,11 +14,7 @@ class Api::CommentsController < ApplicationController
 
 
   def index
-    if @article.present?
-      render json: {comments: Comment.where(article: @article)}, status: 200
-    else
-      render json: { error: 'Article not found!' }, status: 404
-    end
+    render json: Comment.where(article: @article), status: 200
   end
 
 

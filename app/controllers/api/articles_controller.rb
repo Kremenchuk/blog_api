@@ -14,37 +14,24 @@ class Api::ArticlesController < ApplicationController
 
 
   def index
-      articles = Article.all
-      render json: {articles: add_comments_count_to_response(articles)}, status: 200
+    render json: Article.all, status: 200, each_serializer: ArticlesSerializer
   end
 
 
   def show
-      if @article.present?
-        render json: {article: add_comments_count_to_response(@article)}, status: 200
-      else
-        render json: { error: 'Article not found!' }, status: 404
-      end
+    render json: @article, status: 200, serializer: ArticlesSerializer
   end
 
 
   def get_articles_author
-    articles = Article.find(permit_params_id[:id])
-    if articles.present?
-      render json: {articles: add_comments_count_to_response(articles)}, status: 200
-    else
-      render json: { error: "Articles by author id:#{permit_params_id[:id]} not found!" }, status: 404
-    end
+    articles = Article.where(user_id: permit_params_id[:id])
+    render json: articles, status: 200, each_serializer: ArticlesSerializer
   end
 
 
   def get_articles_category
-      articles = Article.where(category: params.permit(:category)['category'])
-      if articles.present?
-        render json: {articles: add_comments_count_to_response(articles)}, status: 200
-      else
-        render json: { error: "Articles by category:#{params.permit(:category)['category']} not found!" }, status: 404
-      end
+    articles = Article.where(category: params.permit(:category)['category'])
+    render json: articles, status: 200, each_serializer: ArticlesSerializer
   end
 
 
@@ -62,27 +49,27 @@ class Api::ArticlesController < ApplicationController
   private
 
 
-  def add_comments_count_to_response(articles)
-    article_array = Array.new
-    if articles.is_a? Article
-      article_hash = articles.as_json
-      article_hash['comments'] = articles.comments.count
-      if articles.body.length > 500
-        article_hash['body'] = article_hash['body'].truncate(500)
-      end
-      article_array << article_hash
-    else
-      articles.each do |article|
-        article_hash = article.as_json
-        article_hash['comments'] = article.comments.count
-        if article.body.length > 500
-          article_hash['body'] = article_hash['body'].truncate(500)
-        end
-        article_array << article_hash
-      end
-    end
-    return article_array
-  end
+  # def add_comments_count_to_response(articles)
+  #   article_array = Array.new
+  #   if articles.is_a? Article
+  #     article_hash = articles.as_json
+  #     article_hash['comments'] = articles.comments.count
+  #     if articles.body.length > 500
+  #       article_hash['body'] = article_hash['body'].truncate(500)
+  #     end
+  #     article_array << article_hash
+  #   else
+  #     articles.each do |article|
+  #       article_hash = article.as_json
+  #       article_hash['comments'] = article.comments.count
+  #       if article.body.length > 500
+  #         article_hash['body'] = article_hash['body'].truncate(500)
+  #       end
+  #       article_array << article_hash
+  #     end
+  #   end
+  #   return article_array
+  # end
 
 
   def new_article_permit_params
